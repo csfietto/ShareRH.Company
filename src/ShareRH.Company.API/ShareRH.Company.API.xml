@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ShareRH.Company.API</name>
+    </assembly>
+    <members>
+        <member name="T:ShareRH.Company.API.Controllers.EmployeeController">
+            <summary>
+            An API controller that provide some employee functionalities.
+            </summary>
+        </member>
+        <member name="F:ShareRH.Company.API.Controllers.EmployeeController._employeeService">
+            <summary>
+            An instance of <see cref="T:ShareRH.Company.Domain.Employee.Service.IEmployeeService"/>
+            </summary>
+        </member>
+        <member name="M:ShareRH.Company.API.Controllers.EmployeeController.#ctor(ShareRH.Company.Domain.Employee.Service.IEmployeeService)">
+            <summary>
+            Initialize the Customer controller.
+            </summary>
+            <param name="employeeService">An instance of <see cref="T:ShareRH.Company.Domain.Employee.Service.IEmployeeService"/>.</param>
+        </member>
+        <member name="M:ShareRH.Company.API.Controllers.EmployeeController.Hire(ShareRH.Company.Domain.Employee.Enums.Function,System.String,ShareRH.Company.Domain.Employee.Enums.ContractTypes,System.Int32)">
+            <summary>
+            An API to create and include a new <see cref="T:ShareRH.Company.Domain.Employee.Models.IEmployee"/>.
+            </summary>
+            <param name="function">Indicates which <see cref="T:ShareRH.Company.Domain.Employee.Enums.Function"/> the employee will occupy.</param>
+            <param name="name">The name of the employee.</param>
+            <param name="type">The <see cref="T:ShareRH.Company.Domain.Employee.Enums.ContractTypes"/> model which the employee will be hired.</param>
+            <param name="workHoursPerDay">How many hours the given employee will work in a day.</param>
+            <returns>An instance of <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> with a <see cref="T:ShareRH.Company.Domain.Responses.Response"/> instance encapsulated.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\cfietto\Documents\Cristiano\ShareRH\Projects\ShareRH.Company\src\ShareRH.Company.API\ShareRH.Company.API.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ShareRH.Company.Infrastructure\ShareRH.Company.Infrastructure.csproj" />
+    <ProjectReference Include="..\ShareRH.Company.Application\ShareRH.Company.Application.csproj" />
+    <ProjectReference Include="..\ShareRH.Company.Domain\ShareRH.Company.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
