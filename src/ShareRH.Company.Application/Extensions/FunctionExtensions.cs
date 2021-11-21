@@ -16,9 +16,9 @@ namespace ShareRH.Company.Application.Extensions
         /// <param name="type">An instance of <see cref="ContractTypes"/>.</param>
         /// <param name="workHoursPerDay">How may hours the given employee was hired to work.</param>
         /// <returns></returns>
-        public static IEmployee ToEmployee(this Function function, string name, ContractTypes type, int workHoursPerDay) =>
-             function == Function.Developer
-                ? new Developer(name, type, workHoursPerDay, type.DeveloperHourValue())
+        public static IEmployee ToEmployee(this Function function, string name, ContractTypes type, int workHoursPerDay) => 
+            function == Function.Developer 
+                ? new Developer(name, type, workHoursPerDay, type.DeveloperHourValue()) 
                 : new Manager(name, type, workHoursPerDay, type.ManagerHourValue());
     }
 }

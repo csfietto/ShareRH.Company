@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ShareRH.Company.Application</name>
+    </assembly>
+    <members>
+        <member name="T:ShareRH.Company.Application.ApplicationModuleDependency">
+            <summary>
+            Injects the application dependencies in the API scope.
+            </summary>
+        </member>
+        <member name="M:ShareRH.Company.Application.ApplicationModuleDependency.AddApplicationModule(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Export the application modules available
+            </summary>
+            <param name="services">An instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/></param>
+        </member>
+        <member name="T:ShareRH.Company.Application.Extensions.ContractTypesExtensions">
+            <summary>
+            Provides an extension methods for <see cref="T:ShareRH.Company.Domain.Employee.Enums.ContractTypes"/> objects.
+            </summary>
+        </member>
+        <member name="M:ShareRH.Company.Application.Extensions.ContractTypesExtensions.DeveloperHourValue(ShareRH.Company.Domain.Employee.Enums.ContractTypes)">
+            <summary>
+            Returns the developer value by hour based on the given <see cref="T:ShareRH.Company.Domain.Employee.Enums.ContractTypes"/>.
+            </summary>
+            <param name="contractType">An instance of <see cref="T:ShareRH.Company.Domain.Employee.Enums.ContractTypes"/>.</param>
+            <returns>A <see cref="T:System.Double"/> representing the value of the hour for the developer.</returns>
+        </member>
+        <member name="M:ShareRH.Company.Application.Extensions.ContractTypesExtensions.ManagerHourValue(ShareRH.Company.Domain.Employee.Enums.ContractTypes)">
+            <summary>
+            Returns the manager value by hour based on the given <see cref="T:ShareRH.Company.Domain.Employee.Enums.ContractTypes"/>.
+            </summary>
+            <param name="contractType">An instance of <see cref="T:ShareRH.Company.Domain.Employee.Enums.ContractTypes"/>.</param>
+            <returns>A <see cref="T:System.Double"/> representing the value of the hour for the manager.</returns>
+        </member>
+        <member name="T:ShareRH.Company.Application.Extensions.FunctionExtensions">
+            <summary>
+            Provides an extension methods for <see cref="T:ShareRH.Company.Domain.Employee.Enums.Function"/> objects.
+            </summary>
+        </member>
+        <member name="M:ShareRH.Company.Application.Extensions.FunctionExtensions.ToEmployee(ShareRH.Company.Domain.Employee.Enums.Function,System.String,ShareRH.Company.Domain.Employee.Enums.ContractTypes,System.Int32)">
+            <summary>
+            Creates an instance of <see cref="T:ShareRH.Company.Domain.Employee.Models.IEmployee"/> based on the given <see cref="T:ShareRH.Company.Domain.Employee.Enums.Function"/>, name, <see cref="T:ShareRH.Company.Domain.Employee.Enums.ContractTypes"/> and how many hour to work.
+            </summary>
+            <param name="function">An instance of <see cref="T:ShareRH.Company.Domain.Employee.Enums.Function"/>.</param>
+            <param name="name">The name of the employee.</param>
+            <param name="type">An instance of <see cref="T:ShareRH.Company.Domain.Employee.Enums.ContractTypes"/>.</param>
+            <param name="workHoursPerDay">How may hours the given employee was hired to work.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ShareRH.Company.Application.Services.EmployeeService">
+            <inheritdoc cref="T:ShareRH.Company.Domain.Employee.Service.IEmployeeService"/>
+        </member>
+        <member name="F:ShareRH.Company.Application.Services.EmployeeService._employeeRepository">
+            <summary>
+            An instance of <see cref="T:ShareRH.Company.Domain.Employee.Repository.IEmployeeRepository"/>.
+            </summary>
+        </member>
+        <member name="M:ShareRH.Company.Application.Services.EmployeeService.#ctor(ShareRH.Company.Domain.Employee.Repository.IEmployeeRepository)">
+            <summary>
+            Initialize an instance of <see cref="T:ShareRH.Company.Application.Services.EmployeeService"/> that implements <see cref="T:ShareRH.Company.Domain.Employee.Service.IEmployeeService"/>.
+            </summary>
+            <param name="employeeRepository">An instance of <see cref="T:ShareRH.Company.Domain.Employee.Repository.IEmployeeRepository"/>.</param>
+        </member>
+        <member name="M:ShareRH.Company.Application.Services.EmployeeService.Hire(ShareRH.Company.Domain.Employee.Enums.Function,System.String,ShareRH.Company.Domain.Employee.Enums.ContractTypes,System.Int32)">
+            <inheritdoc cref="M:ShareRH.Company.Domain.Employee.Service.IEmployeeService.Hire(ShareRH.Company.Domain.Employee.Enums.Function,System.String,ShareRH.Company.Domain.Employee.Enums.ContractTypes,System.Int32)"/>
+        </member>
+        <member name="M:ShareRH.Company.Application.Services.EmployeeService.Get(System.String)">
+            <inheritdoc cref="M:ShareRH.Company.Domain.Employee.Service.IEmployeeService.Get(System.String)"/>
+        </member>
+    </members>
+</doc>

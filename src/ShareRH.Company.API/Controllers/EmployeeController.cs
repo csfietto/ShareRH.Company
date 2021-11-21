@@ -33,10 +33,10 @@ namespace ShareRH.Company.API.Controllers
         /// <param name="name">The name of the employee.</param>
         /// <param name="type">The <see cref="ContractTypes"/> model which the employee will be hired.</param>
         /// <param name="workHoursPerDay">How many hours the given employee will work in a day.</param>
-        /// <returns>An instance of <see cref="IActionResult"/> with a <see cref="Response"/> instance encapsulated.</returns>
+        /// <returns>An instance of <see cref="IActionResult"/> with a <see cref="EmployeeResponse"/> instance encapsulated.</returns>
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(Response))]
-        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Response))]
+        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(EmployeeResponse))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(EmployeeResponse))]
         public IActionResult Hire([FromHeader] Function function, [FromHeader] string name, [FromHeader] ContractTypes type, [FromHeader] int workHoursPerDay)
         {
             try
@@ -47,7 +47,29 @@ namespace ShareRH.Company.API.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(new Response {ErrorMessage = ex.StackTrace});
+                return BadRequest(new EmployeeResponse { ErrorMessage = ex.StackTrace});
+            }
+        }
+
+        /// <summary>
+        /// An API to get an instance of <see cref="IEmployee"/> from the repository.
+        /// </summary>
+        /// <param name="id">The identifier of the <see cref="IEmployee"/> that we want to select.</param>
+        /// <returns>An instance of <see cref="IActionResult"/> with a <see cref="IEmployee"/> instance encapsulated.</returns>
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(EmployeeResponse))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(EmployeeResponse))]
+        public IActionResult Get(string id)
+        {
+            try
+            {
+                var response = _employeeService.Get(id);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new EmployeeResponse { ErrorMessage = ex.StackTrace });
             }
         }
     }

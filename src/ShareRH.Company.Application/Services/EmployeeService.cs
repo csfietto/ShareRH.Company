@@ -25,18 +25,35 @@ namespace ShareRH.Company.Application.Services
         }
 
         /// <inheritdoc cref="IEmployeeService.Hire"/>
-        public Response Hire(Function function, string name, ContractTypes type, int workHoursPerDay)
+        public EmployeeResponse Hire(Function function, string name, ContractTypes type, int workHoursPerDay)
         {
             try
             {
                 var employee = function.ToEmployee(name, type, workHoursPerDay);
                 _employeeRepository.Add(employee);
 
-                return new Response { Success = true };
+                return new EmployeeResponse { Employee = employee };
             }
             catch (Exception e)
             {
-                return new Response { ErrorMessage = e.StackTrace };
+                return new EmployeeResponse { ErrorMessage = e.StackTrace };
+            }
+        }
+
+        /// <inheritdoc cref="IEmployeeService.Get"/>
+        public EmployeeResponse Get(string id)
+        {
+            try
+            {
+                var employee = _employeeRepository.Get(id);
+                if (employee == null)
+                    throw new Exception("Employee was not found!");
+
+                return new EmployeeResponse { Employee = employee };
+            }
+            catch (Exception e)
+            {
+                return new EmployeeResponse { ErrorMessage = e.StackTrace };
             }
         }
     }

@@ -16,5 +16,14 @@ namespace ShareRH.Company.Infrastructure.Contexts
         /// <inheritdoc />
         public void Add(IStorable storable) => 
             MemoryRepository.Add(storable.Id, storable);
+
+        /// <inheritdoc />
+        public T Get<T>(string id) where T : IStorable
+        {
+            MemoryRepository.TryGetValue(id, out var storable);
+            return storable is not T stored 
+                ? default 
+                : stored;
+        }
     }
 }

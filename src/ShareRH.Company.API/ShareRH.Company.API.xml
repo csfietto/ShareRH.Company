@@ -28,7 +28,61 @@
             <param name="name">The name of the employee.</param>
             <param name="type">The <see cref="T:ShareRH.Company.Domain.Employee.Enums.ContractTypes"/> model which the employee will be hired.</param>
             <param name="workHoursPerDay">How many hours the given employee will work in a day.</param>
-            <returns>An instance of <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> with a <see cref="T:ShareRH.Company.Domain.Responses.Response"/> instance encapsulated.</returns>
+            <returns>An instance of <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> with a <see cref="T:ShareRH.Company.Domain.Responses.EmployeeResponse"/> instance encapsulated.</returns>
+        </member>
+        <member name="M:ShareRH.Company.API.Controllers.EmployeeController.Get(System.String)">
+            <summary>
+            An API to get an instance of <see cref="T:ShareRH.Company.Domain.Employee.Models.IEmployee"/> from the repository.
+            </summary>
+            <param name="id">The identifier of the <see cref="T:ShareRH.Company.Domain.Employee.Models.IEmployee"/> that we want to select.</param>
+            <returns>An instance of <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> with a <see cref="T:ShareRH.Company.Domain.Employee.Models.IEmployee"/> instance encapsulated.</returns>
+        </member>
+        <member name="T:ShareRH.Company.API.Program">
+            <summary>
+            Program initialization class.
+            </summary>
+        </member>
+        <member name="M:ShareRH.Company.API.Program.Main(System.String[])">
+            <summary>
+            The startup method of the program.
+            </summary>
+            <param name="args">The arguments received from the script command.</param>
+        </member>
+        <member name="M:ShareRH.Company.API.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Creates a host and starts the APIs.
+            </summary>
+            <param name="args">The arguments received from the script command.</param>
+            <returns>An instance of <see cref="T:Microsoft.Extensions.Hosting.IHostBuilder"/>.</returns>
+        </member>
+        <member name="T:ShareRH.Company.API.Startup">
+            <summary>
+            The APIs startup operation.
+            </summary>
+        </member>
+        <member name="M:ShareRH.Company.API.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Creates an instance of <see cref="T:ShareRH.Company.API.Startup"/> class.
+            </summary>
+            <param name="configuration">An instance of <see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/>.</param>
+        </member>
+        <member name="P:ShareRH.Company.API.Startup.Configuration">
+            <summary>
+            An instance of <see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/>.
+            </summary>
+        </member>
+        <member name="M:ShareRH.Company.API.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services">An instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/></param>
+        </member>
+        <member name="M:ShareRH.Company.API.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">An instance of <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/>.</param>
+            <param name="env">An instance of <see cref="T:Microsoft.AspNetCore.Hosting.IWebHostEnvironment"/>.</param>
         </member>
     </members>
 </doc>

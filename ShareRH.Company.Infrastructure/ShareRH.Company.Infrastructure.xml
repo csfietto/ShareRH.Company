@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ShareRH.Company.Infrastructure</name>
+    </assembly>
+    <members>
+        <member name="T:ShareRH.Company.Infrastructure.Contexts.InMemoryDataBase">
+            <summary>
+            Represents an instance of <see cref="T:ShareRH.Company.Domain.Common.IRepository"/> which keep the data in memory.
+            </summary>
+        </member>
+        <member name="F:ShareRH.Company.Infrastructure.Contexts.InMemoryDataBase.MemoryRepository">
+            <summary>
+            The <see cref="T:ShareRH.Company.Domain.Common.IStorable"/> memory database.
+            </summary>
+        </member>
+        <member name="M:ShareRH.Company.Infrastructure.Contexts.InMemoryDataBase.Add(ShareRH.Company.Domain.Common.IStorable)">
+            <inheritdoc />
+        </member>
+        <member name="M:ShareRH.Company.Infrastructure.Contexts.InMemoryDataBase.Get``1(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:ShareRH.Company.Infrastructure.DataBaseInMemoryModuleDependency">
+            <summary>
+            Injects the application dependencies in the API scope.
+            </summary>
+        </member>
+        <member name="M:ShareRH.Company.Infrastructure.DataBaseInMemoryModuleDependency.AddDataBaseInMemoryModule(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Export the application modules available
+            </summary>
+            <param name="services">An instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/></param>
+        </member>
+        <member name="T:ShareRH.Company.Infrastructure.Repositories.EmployeeRepository">
+            <inheritdoc />
+        </member>
+        <member name="F:ShareRH.Company.Infrastructure.Repositories.EmployeeRepository._repository">
+            <summary>
+            The <see cref="T:ShareRH.Company.Domain.Employee.Models.IEmployee"/> memory database.
+            </summary>
+        </member>
+        <member name="M:ShareRH.Company.Infrastructure.Repositories.EmployeeRepository.#ctor(ShareRH.Company.Domain.Common.IRepository)">
+            <summary>
+            Initialize an instance of <see cref="T:ShareRH.Company.Infrastructure.Repositories.EmployeeRepository"/> which provides an implementation of <see cref="T:ShareRH.Company.Domain.Employee.Repository.IEmployeeRepository"/>.
+            </summary>
+            <param name="repository">An instance of <see cref="T:ShareRH.Company.Domain.Common.IRepository"/>.</param>
+        </member>
+        <member name="M:ShareRH.Company.Infrastructure.Repositories.EmployeeRepository.Add(ShareRH.Company.Domain.Employee.Models.IEmployee)">
+            <inheritdoc />
+        </member>
+        <member name="M:ShareRH.Company.Infrastructure.Repositories.EmployeeRepository.Get(System.String)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

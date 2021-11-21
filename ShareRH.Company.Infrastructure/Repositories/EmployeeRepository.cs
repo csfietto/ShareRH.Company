@@ -23,5 +23,8 @@ namespace ShareRH.Company.Infrastructure.Repositories
 
         /// <inheritdoc />
         public void Add(IEmployee employee) => _repository.Add(employee);
+
+        /// <inheritdoc />
+        public IEmployee Get(string id) => _repository.Get<IEmployee>(id);
     }
 }

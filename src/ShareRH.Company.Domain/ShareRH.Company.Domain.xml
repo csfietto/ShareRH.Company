@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ShareRH.Company.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:ShareRH.Company.Domain.Common.IRepository">
+            <summary>
+            Provides the expected methods for a repository instance.
+            </summary>
+        </member>
+        <member name="M:ShareRH.Company.Domain.Common.IRepository.Add(ShareRH.Company.Domain.Common.IStorable)">
+            <summary>
+            Add a new instance of <see cref="T:ShareRH.Company.Domain.Common.IStorable"/> objects into the repository.
+            </summary>
+            <param name="storable">Any <see cref="T:ShareRH.Company.Domain.Common.IStorable"/> instance.</param>
+        </member>
+        <member name="M:ShareRH.Company.Domain.Common.IRepository.Get``1(System.String)">
+            <summary>
+            Returns the <see cref="T:ShareRH.Company.Domain.Common.IStorable"/> from the repository.
+            </summary>
+            <typeparam name="T">The type of the instance returned which must implements an <see cref="T:ShareRH.Company.Domain.Common.IStorable"/>.</typeparam>
+            <param name="id">The <see cref="T:System.String"/> identifier of the <see cref="T:ShareRH.Company.Domain.Common.IStorable"/> item saved.</param>
+            <returns>The <see cref="T:ShareRH.Company.Domain.Common.IStorable"/> item if any matched with the given identifier, otherwise a null instance.</returns>
+        </member>
+        <member name="T:ShareRH.Company.Domain.Common.IStorable">
+            <summary>
+            Represents any object that can be stored.
+            </summary>
+        </member>
+        <member name="P:ShareRH.Company.Domain.Common.IStorable.Id">
+            <summary>
+            The identifier of the object that can be stored.
+            </summary>
+        </member>
+        <member name="T:ShareRH.Company.Domain.Employee.Constants.EmployeeConstants">
+            <summary>
+            Constants values related to employee methods and properties.
+            </summary>
+        </member>
+        <member name="F:ShareRH.Company.Domain.Employee.Constants.EmployeeConstants.WorkDaysInMonth">
+            <summary>
+            Represents the quantity of work available days in a month to calculate the salary.
+            </summary>
+        </member>
+        <member name="F:ShareRH.Company.Domain.Employee.Constants.EmployeeConstants.DeveloperInitialValueByHourOnCltContracts">
+            <summary>
+            Represents the hour value for a developer contracted as a <see cref="F:ShareRH.Company.Domain.Employee.Enums.ContractTypes.Clt"/>.
+            </summary>
+        </member>
+        <member name="F:ShareRH.Company.Domain.Employee.Constants.EmployeeConstants.DeveloperInitialValueByHourOnPjContracts">
+            <summary>
+            Represents the hour value for a developer contracted as a <see cref="F:ShareRH.Company.Domain.Employee.Enums.ContractTypes.Pj"/>.
+            </summary>
+        </member>
+        <member name="F:ShareRH.Company.Domain.Employee.Constants.EmployeeConstants.ManagerInitialValueByHourOnCltContracts">
+            <summary>
+            Represents the hour value for a developer contracted as a <see cref="F:ShareRH.Company.Domain.Employee.Enums.ContractTypes.Clt"/>.
+            </summary>
+        </member>
+        <member name="F:ShareRH.Company.Domain.Employee.Constants.EmployeeConstants.ManagerInitialValueByHourOnPjContracts">
+            <summary>
+            Represents the hour value for a developer contracted as a <see cref="F:ShareRH.Company.Domain.Employee.Enums.ContractTypes.Pj"/>.
+            </summary>
+        </member>
+        <member name="F:ShareRH.Company.Domain.Employee.Constants.EmployeeConstants.ManagerBonusMultiplier">
+            <summary>
+            Represents a percentage as a bonus for the manager.
+            </summary>
+        </member>
+        <member name="T:ShareRH.Company.Domain.Employee.Enums.ContractTypes">
+            <summary>
+            Enumerates the types of contracts that can have in a company.
+            </summary>
+        </member>
+        <member name="F:ShareRH.Company.Domain.Employee.Enums.ContractTypes.Clt">
+            <summary>
+            It is a contract type where the employee was contracted using the CPF document and not as a company based on government rules.
+            </summary>
+        </member>
+        <member name="F:ShareRH.Company.Domain.Employee.Enums.ContractTypes.Pj">
+            <summary>
+            Represents a type of contract where the employee was contracted as a company.
+            </summary>
+        </member>
+        <member name="T:ShareRH.Company.Domain.Employee.Enums.Function">
+            <summary>
+            Enumerates the functions available to be occupied by the employees.
+            </summary>
+        </member>
+        <member name="F:ShareRH.Company.Domain.Employee.Enums.Function.Developer">
+            <summary>
+            When the employee was contract to be the master of the world creating solutions to make our lives better.
+            </summary>
+        </member>
+        <member name="F:ShareRH.Company.Domain.Employee.Enums.Function.Manager">
+            <summary>
+            Who make decisions and creates meetings everyday to know the status of the developer tasks and also give us the some days off.
+            </summary>
+        </member>
+        <member name="T:ShareRH.Company.Domain.Employee.Models.Developer">
+            <summary>
+            Class to represents a developer.
+            </summary>
+            <inheritdoc />
+        </member>
+        <member name="P:ShareRH.Company.Domain.Employee.Models.Developer.Type">
+            <inheritdoc />
+        </member>
+        <member name="P:ShareRH.Company.Domain.Employee.Models.Developer.Name">
+            <inheritdoc />
+        </member>
+        <member name="P:ShareRH.Company.Domain.Employee.Models.Developer.Function">
+            <inheritdoc />
+        </member>
+        <member name="P:ShareRH.Company.Domain.Employee.Models.Developer.WorkHoursPerDay">
+            <inheritdoc />
+        </member>
+        <member name="M:ShareRH.Company.Domain.Employee.Models.Developer.#ctor(System.String,ShareRH.Company.Domain.Employee.Enums.ContractTypes,System.Int32,System.Double)">
+            <summary>
+            Initialize an object of <see cref="T:ShareRH.Company.Domain.Employee.Models.Developer"/>.
+            </summary>
+            <param name="name">The name of the employee contracted as <see cref="F:ShareRH.Company.Domain.Employee.Enums.ContractTypes.Clt"/>.</param>
+            <param name="contractType">The <see cref="T:ShareRH.Company.Domain.Employee.Enums.ContractTypes"/> which the employee was contracted.</param>
+            <param name="workHoursPerDay">The amount of hours that this worker must work in a day.</param>
+            <param name="workHourValue">The value to pay for each hour worked by the employee.</param>
+        </member>
+        <member name="M:ShareRH.Company.Domain.Employee.Models.Developer.Salary">
+            <inheritdoc />
+        </member>
+        <member name="T:ShareRH.Company.Domain.Employee.Models.EmployeeBase">
+            <inheritdoc cref="T:ShareRH.Company.Domain.Employee.Models.IEmployee" />
+            <inheritdoc cref="T:ShareRH.Company.Domain.Common.IStorable" />
+        </member>
+        <member name="P:ShareRH.Company.Domain.Employee.Models.EmployeeBase.Type">
+            <inheritdoc />
+        </member>
+        <member name="P:ShareRH.Company.Domain.Employee.Models.EmployeeBase.Name">
+            <inheritdoc />
+        </member>
+        <member name="P:ShareRH.Company.Domain.Employee.Models.EmployeeBase.Function">
+            <inheritdoc />
+        </member>
+        <member name="P:ShareRH.Company.Domain.Employee.Models.EmployeeBase.WorkHoursPerDay">
+            <inheritdoc />
+        </member>
+        <member name="P:ShareRH.Company.Domain.Employee.Models.EmployeeBase.ValueByHourWorked">
+            <summary>
+            The amount that should be paid to the employee for each hour worked.
+            </summary>
+        </member>
+        <member name="M:ShareRH.Company.Domain.Employee.Models.EmployeeBase.#ctor(System.Double)">
+            <summary>
+            Creates an instance of <see cref="T:ShareRH.Company.Domain.Employee.Models.IEmployee"/> and set the value of each work hour.
+            </summary>
+            <param name="workHourValue">The value to pay for each hour worked by the employee.</param>
+        </member>
+        <member name="M:ShareRH.Company.Domain.Employee.Models.EmployeeBase.Salary">
+            <inheritdoc />
+        </member>
+        <member name="T:ShareRH.Company.Domain.Employee.Models.IEmployee">
+            <summary>
+            An interface that represent all employees in a company.
+            </summary>
+            <inheritdoc />
+        </member>
+        <member name="P:ShareRH.Company.Domain.Employee.Models.IEmployee.Type">
+            <summary>
+            Represent how the employee was contracted.
+            </summary>
+        </member>
+        <member name="P:ShareRH.Company.Domain.Employee.Models.IEmployee.Name">
+            <summary>
+            The name of the employee.
+            </summary>
+        </member>
+        <member name="P:ShareRH.Company.Domain.Employee.Models.IEmployee.Function">
+            <summary>
+            Represent what is the name of the position occupied by the employee.
+            </summary>
+        </member>
+        <member name="P:ShareRH.Company.Domain.Employee.Models.IEmployee.WorkHoursPerDay">
+            <summary>
+            Represent how many hour per day the employee should work and also is the base of the payment calculation.
+            </summary>
+        </member>
+        <member name="M:ShareRH.Company.Domain.Employee.Models.IEmployee.Salary">
+            <summary>
+            Returns the salary of the employee.
+            </summary>
+            <returns>A <see cref="T:System.Double"/> value representing the salary of the employee.</returns>
+        </member>
+        <member name="T:ShareRH.Company.Domain.Employee.Models.Manager">
+            <summary>
+            Class to represents a manager.
+            </summary>
+            <inheritdoc />
+        </member>
+        <member name="P:ShareRH.Company.Domain.Employee.Models.Manager.Type">
+            <inheritdoc />
+        </member>
+        <member name="P:ShareRH.Company.Domain.Employee.Models.Manager.Name">
+            <inheritdoc />
+        </member>
+        <member name="P:ShareRH.Company.Domain.Employee.Models.Manager.Function">
+            <inheritdoc />
+        </member>
+        <member name="P:ShareRH.Company.Domain.Employee.Models.Manager.WorkHoursPerDay">
+            <inheritdoc />
+        </member>
+        <member name="M:ShareRH.Company.Domain.Employee.Models.Manager.#ctor(System.String,ShareRH.Company.Domain.Employee.Enums.ContractTypes,System.Int32,System.Double)">
+            <summary>
+            Initialize an object of <see cref="T:ShareRH.Company.Domain.Employee.Models.Manager"/>.
+            </summary>
+            <param name="name">The name of the employee contracted as <see cref="F:ShareRH.Company.Domain.Employee.Enums.ContractTypes.Clt"/>.</param>
+            <param name="contractType">The <see cref="T:ShareRH.Company.Domain.Employee.Enums.ContractTypes"/> which the employee was contracted.</param>
+            <param name="workHoursPerDay">The amount of hours that this worker must work in a day.</param>
+            <param name="workHourValue">The value to pay for each hour worked by the employee.</param>
+        </member>
+        <member name="T:ShareRH.Company.Domain.Employee.Repository.IEmployeeRepository">
+            <summary>
+            A repository class for <see cref="T:ShareRH.Company.Domain.Employee.Models.IEmployee"/>s.
+            </summary>
+        </member>
+        <member name="M:ShareRH.Company.Domain.Employee.Repository.IEmployeeRepository.Add(ShareRH.Company.Domain.Employee.Models.IEmployee)">
+            <summary>
+            Add into the repository an instance of <see cref="T:ShareRH.Company.Domain.Employee.Models.IEmployee"/>.
+            </summary>
+        </member>
+        <member name="M:ShareRH.Company.Domain.Employee.Repository.IEmployeeRepository.Get(System.String)">
+            <summary>
+            Get an instance of <see cref="T:ShareRH.Company.Domain.Employee.Models.IEmployee"/> from the repository.
+            </summary>
+            <param name="id">The <see cref="T:ShareRH.Company.Domain.Employee.Models.IEmployee"/> identifier to select in the repository.</param>
+            <returns>An instance of <see cref="T:ShareRH.Company.Domain.Employee.Repository.IEmployeeRepository"/> that matched with the given identifier, otherwise a null instance.</returns>
+        </member>
+        <member name="T:ShareRH.Company.Domain.Employee.Service.IEmployeeService">
+            <summary>
+            Encapsulate the functions to manipulate the <see cref="T:ShareRH.Company.Domain.Employee.Models.IEmployee"/> instances.
+            </summary>
+        </member>
+        <member name="M:ShareRH.Company.Domain.Employee.Service.IEmployeeService.Hire(ShareRH.Company.Domain.Employee.Enums.Function,System.String,ShareRH.Company.Domain.Employee.Enums.ContractTypes,System.Int32)">
+            <summary>
+            Creates a new employee and add in the company base list.
+            </summary>
+            <returns>An instance of <see cref="!:Response"/> with the result of the operation.</returns>
+        </member>
+        <member name="M:ShareRH.Company.Domain.Employee.Service.IEmployeeService.Get(System.String)">
+            <summary>
+            Get an instance of <see cref="T:ShareRH.Company.Domain.Employee.Models.IEmployee"/> from the repository based on the given identifier.
+            A null value will be returned in case of non-existent value.
+            </summary>
+            <param name="id">The identifier to be selected.</param>
+            <returns>An instance of <see cref="T:ShareRH.Company.Domain.Employee.Models.IEmployee"/> that matched with the identifier.</returns>
+        </member>
+        <member name="T:ShareRH.Company.Domain.Responses.EmployeeResponse">
+            <summary>
+            A response object which requires an instance of <see cref="T:ShareRH.Company.Domain.Employee.Models.IEmployee"/>.
+            </summary>
+        </member>
+        <member name="P:ShareRH.Company.Domain.Responses.EmployeeResponse.EmployeeIdentifier">
+            <summary>
+            The identifier of the <see cref="T:ShareRH.Company.Domain.Employee.Models.IEmployee"/>.
+            </summary>
+        </member>
+        <member name="P:ShareRH.Company.Domain.Responses.EmployeeResponse.Employee">
+            <summary>
+            An instance of <see cref="T:ShareRH.Company.Domain.Employee.Models.IEmployee"/>.
+            </summary>
+        </member>
+        <member name="P:ShareRH.Company.Domain.Responses.EmployeeResponse.ErrorMessage">
+            <summary>
+            A <see cref="T:System.String"/> message to be filled in case of any errors in the operation.
+            It will be empty in case of success.
+            </summary>
+        </member>
+    </members>
+</doc>
