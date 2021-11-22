@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Users\cfietto\Documents\Cristiano\ShareRH\Projects\ShareRH.Company\ShareRH.Company.Infrastructure\ShareRH.Company.Infrastructure.xml</DocumentationFile>
+    <DocumentationFile>C:\Users\cfietto\Documents\Cristiano\ShareRH\Projects\ShareRH.Company\src\ShareRH.Company.Infrastructure\ShareRH.Company.Infrastructure.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ShareRH.Company.Domain\ShareRH.Company.Domain.csproj" />
-    <ProjectReference Include="..\src\ShareRH.Company.Domain\ShareRH.Company.Domain.csproj" />
+    <ProjectReference Include="..\ShareRH.Company.Domain\ShareRH.Company.Domain.csproj" />
   </ItemGroup>
 
 </Project>

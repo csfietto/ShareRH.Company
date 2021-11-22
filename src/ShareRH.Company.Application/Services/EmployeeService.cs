@@ -53,7 +53,7 @@ namespace ShareRH.Company.Application.Services
             }
             catch (Exception e)
             {
-                return new EmployeeResponse { ErrorMessage = e.StackTrace };
+                return new EmployeeResponse { ErrorMessage = e.ToString() };
             }
         }
     }

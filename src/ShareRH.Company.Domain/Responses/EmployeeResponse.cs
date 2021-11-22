@@ -10,7 +10,7 @@ namespace ShareRH.Company.Domain.Responses
         /// <summary>
         /// The identifier of the <see cref="IEmployee"/>.
         /// </summary>
-        public string EmployeeIdentifier => Employee.Id;
+        public string EmployeeIdentifier => Employee?.Id;
 
         /// <summary>
         /// An instance of <see cref="IEmployee"/>.
