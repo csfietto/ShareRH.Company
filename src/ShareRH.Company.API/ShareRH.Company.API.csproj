@@ -13,9 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ShareRH.Company.Infrastructure\ShareRH.Company.Infrastructure.csproj" />
     <ProjectReference Include="..\ShareRH.Company.Application\ShareRH.Company.Application.csproj" />
     <ProjectReference Include="..\ShareRH.Company.Domain\ShareRH.Company.Domain.csproj" />
+    <ProjectReference Include="..\ShareRH.Company.Infrastructure\ShareRH.Company.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

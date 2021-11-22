@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{239001F8-7F6B-4018-8025-D72376DE2D2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareRH.Company.API", "src\ShareRH.Company.API\ShareRH.Company.API.csproj", "{5397A539-0177-43D5-8EA5-A824DB58D96E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareRH.Company.API", "src\ShareRH.Company.API\ShareRH.Company.API.csproj", "{5397A539-0177-43D5-8EA5-A824DB58D96E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareRH.Company.Application", "src\ShareRH.Company.Application\ShareRH.Company.Application.csproj", "{39DCDBBF-3954-4887-A6E3-AEAC7F2B5D48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareRH.Company.Application", "src\ShareRH.Company.Application\ShareRH.Company.Application.csproj", "{39DCDBBF-3954-4887-A6E3-AEAC7F2B5D48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareRH.Company.Domain", "src\ShareRH.Company.Domain\ShareRH.Company.Domain.csproj", "{6FC0215C-98F2-47CC-B694-F355074B18FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareRH.Company.Domain", "src\ShareRH.Company.Domain\ShareRH.Company.Domain.csproj", "{6FC0215C-98F2-47CC-B694-F355074B18FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareRH.Company.Infrastructure", "ShareRH.Company.Infrastructure\ShareRH.Company.Infrastructure.csproj", "{DFB1D9DE-95BB-4E1F-9D0F-040EFB787A13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareRH.Company.Infrastructure", "src\ShareRH.Company.Infrastructure\ShareRH.Company.Infrastructure.csproj", "{1A1CD7DE-4017-4F02-BC88-D46AE251C381}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +31,10 @@ Global
 		{6FC0215C-98F2-47CC-B694-F355074B18FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FC0215C-98F2-47CC-B694-F355074B18FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FC0215C-98F2-47CC-B694-F355074B18FD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DFB1D9DE-95BB-4E1F-9D0F-040EFB787A13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DFB1D9DE-95BB-4E1F-9D0F-040EFB787A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DFB1D9DE-95BB-4E1F-9D0F-040EFB787A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DFB1D9DE-95BB-4E1F-9D0F-040EFB787A13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A1CD7DE-4017-4F02-BC88-D46AE251C381}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A1CD7DE-4017-4F02-BC88-D46AE251C381}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A1CD7DE-4017-4F02-BC88-D46AE251C381}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A1CD7DE-4017-4F02-BC88-D46AE251C381}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,7 +43,7 @@ Global
 		{5397A539-0177-43D5-8EA5-A824DB58D96E} = {239001F8-7F6B-4018-8025-D72376DE2D2D}
 		{39DCDBBF-3954-4887-A6E3-AEAC7F2B5D48} = {239001F8-7F6B-4018-8025-D72376DE2D2D}
 		{6FC0215C-98F2-47CC-B694-F355074B18FD} = {239001F8-7F6B-4018-8025-D72376DE2D2D}
-		{DFB1D9DE-95BB-4E1F-9D0F-040EFB787A13} = {239001F8-7F6B-4018-8025-D72376DE2D2D}
+		{1A1CD7DE-4017-4F02-BC88-D46AE251C381} = {239001F8-7F6B-4018-8025-D72376DE2D2D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D816DA00-7753-40E5-93E2-E578C2247C88}
